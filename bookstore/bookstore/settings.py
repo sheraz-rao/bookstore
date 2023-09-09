@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'user',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +82,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+# Use Django Rest Framework's authentication classes
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
 
 
